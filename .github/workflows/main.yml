@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Display os-release
-        run: cat /etc/os-release
       - name: Setup miniconda
         uses: goanpeca/setup-miniconda@v1
         with:
