@@ -1,0 +1,18 @@
+  environment:
+    matrix:
+      - PYTHON_VERSION: "3.6"
+        CONDA_INSTALL_LOCN: "C:\\Miniconda36-x64"
+        
+ platform:
+    - x64
+    
+ init:
+  - echo %PYTHON_VERSION% %CONDA_INSTALL_LOCN%
+
+install:
+  - set PATH=%CONDA_INSTALL_LOCN%;%CONDA_INSTALL_LOCN%\scripts;%PATH%;
+  - conda config --set always_yes true
+  - conda config --set show_channel_urls yes
+  - conda config --prepend channels conda-forge
+  - conda install conda-build
+  - conda build .
