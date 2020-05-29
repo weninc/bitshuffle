@@ -35,9 +35,4 @@ outputs:
         - cffi
         - bitshuffle
 
-    test:
-      requires:
-        - pytest
-        - h5py
-      commands:
-        - pytest --pyargs bitshuffle
+    
