@@ -4,9 +4,11 @@ on: [push, pull_request]
 
 jobs:
   build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
     name: Build bitshuffle conda packages
-    runs-on: [ubuntu-latest, windows-latest]
-
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
