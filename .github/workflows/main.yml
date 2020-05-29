@@ -1,0 +1,29 @@
+name: Build conda packages
+# This workflow is triggered on pushes to the repository.
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build bitshuffle conda packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Display os-release
+        run: cat /etc/os-release
+      - name: Setup miniconda
+        uses: goanpeca/setup-miniconda@v1
+        with:
+          auto-update-conda: true
+          activate-environment: conda_pkg_build_env
+      - name: install conda-build
+        shell: bash -l {0}
+        run: |
+          conda info
+          conda install conda-build
+          conda config --add channels conda-forge
+      - name: Build Conda package
+        shell: bash -l {0}
+        run: |
+          conda build $GITHUB_WORKSPACE
