@@ -31,6 +31,10 @@
 #include <stdlib.h>
 #include "bitshuffle_core.h"
 
+#if defined(_MSC_VER)
+__declspec(dllexport)
+#endif	/* defined(_MSC_VER) */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
