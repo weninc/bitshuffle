@@ -1,12 +1,9 @@
-  environment:
-    matrix:
-      - PYTHON_VERSION: "3.6"
-        CONDA_INSTALL_LOCN: "C:\\Miniconda36-x64"
+environment:
+  matrix:
+    - PYTHON_VERSION: "3.6"
+      CONDA_INSTALL_LOCN: "C:\\Miniconda36-x64"
         
- platform:
-    - x64
-    
- init:
+init:
   - echo %PYTHON_VERSION% %CONDA_INSTALL_LOCN%
 
 install:
