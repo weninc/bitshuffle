@@ -9,7 +9,7 @@ if(LINUX)
 endif()
 
 
-add_library(bshuf SHARED SHARED IMPORTED
+add_library(bshuf SHARED IMPORTED
     src/bitshuffle.c
     src/bitshuffle_core.c
     src/iochain.c
