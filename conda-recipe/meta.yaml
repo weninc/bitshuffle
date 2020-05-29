@@ -12,7 +12,8 @@ build:
   
 outputs:
   - name: bitshuffle
-    script: build_bitshuffle.sh
+    script: build_bitshuffle.sh # [not win]
+    script: build_bitshuffle.bat # [win]
     requirements:
       build:
         - cmake
