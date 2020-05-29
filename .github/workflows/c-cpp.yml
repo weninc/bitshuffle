@@ -7,10 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  name: Ex1 (${{ matrix.python-version }}, ${{ matrix.os }})
   runs-on: ${{ matrix.os }}
   strategy:
-    fail-fast: false
     matrix:
       os: ["ubuntu-latest", "windows-latest"]
       python-version: ["3.8"]
