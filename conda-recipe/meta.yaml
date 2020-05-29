@@ -1,0 +1,42 @@
+{% set version = "0.9.0" %}
+
+package:
+  name: bitshuffle
+  version: {{ version }}
+
+source:
+  path: ..
+
+build:
+  number: 2
+  
+outputs:
+  - name: bitshuffle
+    script: build_bitshuffle.sh
+    requirements:
+      build:
+        - cmake
+        - {{ compiler('c') }}
+
+      host:
+        - hdf5== 1.10.5
+    
+    
+  - name: bitshuffle-python
+    script: build_python.sh
+    requirements:
+      host:
+        - python
+  
+      run:
+        - python 
+        - numpy
+        - cffi
+        - bitshuffle
+
+    test:
+      requires:
+        - pytest
+        - h5py
+      commands:
+        - pytest --pyargs bitshuffle
