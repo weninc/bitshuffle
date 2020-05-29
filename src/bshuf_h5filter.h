@@ -41,6 +41,10 @@
 
 #define BSHUF_H5_COMPRESS_LZ4 2
 
+#if defined(_MSC_VER)
+__declspec(dllexport)
+#endif	/* defined(_MSC_VER) */
+
 
 extern H5Z_class_t bshuf_H5Filter[1];
 
