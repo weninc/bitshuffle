@@ -26,7 +26,7 @@ jobs:
       - name: Build Conda package
         shell: bash -l {0}
         run: |
-          conda build $GITHUB_WORKSPACE
+          conda build $GITHUB_WORKSPACE --output-folder=$GITHUB_WORKSPACE
       - name: Prepare artifacts
         shell: bash -l {0}
         run: |
