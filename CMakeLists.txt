@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 project(bitshuffle)
 
 find_package(HDF5 REQUIRED)
+
+set(WINDOWS_EXPORT_ALL_SYMBOLS True)
+
 if(LINUX) 
     add_compile_options(-mavx2)
     add_compile_options(-ffast-math)
