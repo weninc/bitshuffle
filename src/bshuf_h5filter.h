@@ -35,6 +35,11 @@
 #define H5Z_class_t_vers 2
 #include "hdf5.h"
 
+#if defined(_MSC_VER)
+    #define H5_DLL __declspec(dllimport)
+    #define H5_DLLVAR __declspec(dllimport)
+#endif	/* defined(_MSC_VER) */
+
 
 #define BSHUF_H5FILTER 32008
 
