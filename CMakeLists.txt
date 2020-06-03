@@ -12,7 +12,7 @@ if(LINUX)
 endif()
 
 
-add_library(bshuf STATIC
+add_library(bshuf SHARED
     src/bitshuffle.c
     src/bitshuffle_core.c
     src/iochain.c
