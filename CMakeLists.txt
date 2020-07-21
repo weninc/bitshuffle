@@ -23,3 +23,9 @@ target_include_directories(h5bshuf PRIVATE
 target_link_libraries(h5bshuf
     ${HDF5_LIBRARIES}
 )
+
+install(TARGETS h5bshuf
+    LIBRARY DESTINATION lib/hdf5/plugin
+)
+
+
