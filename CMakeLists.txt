@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
 project(bitshuffle)
 
-find_package(HDF5 static REQUIRED)
+find_package(HDF5 REQUIRED static)
 
 set(WINDOWS_EXPORT_ALL_SYMBOLS True)
 
